@@ -1,7 +1,29 @@
-describe('Interacting with elements', function() {
+const internetPage = require('../pages/internet.page')
+
+describe('Interacting with elements', function () {
     it("Get text for element", () => {
         browser.url('/')
-        let text = $("h2").getText
+        let text = $("//*[@id='page-footer']").getText()
         console.log(text)
+        internetPage.getLiText()
+        internetPage.getSpecificElementText(3)
+    })
+    it("Is footer displayed", () => {
+        console.log(internetPage.pageFooter.isDisplayed())
+    })
+    it("Does the header exist?", () => {
+        console.log(internetPage.pageHeader.isExisting())
+    })
+    it("Is footer in viewport?", () => {
+        console.log(internetPage.pageFooter.isDisplayedInViewport())
+    })
+    it("Is header in viewport?", () => {
+        console.log(internetPage.pageHeader.isDisplayedInViewport())
+    })
+    it("Is subheader in enabled?", () => {
+        console.log(internetPage.subHeading.isEnabled())
+    })
+    it("Click Element", () => {
+        internetPage.clickOnLink()
     })
 })
