@@ -4,11 +4,11 @@ describe(' Test element actions', function () {
     it('Should click element', () => {
         browser.url('/')
         internetPage.clickOnLink()
-        expect(browser.getUrl()).equals('http://the-internet.herokuapp.com/abtest')
+        expect(browser).toHaveUrl('http://the-internet.herokuapp.com/abtest');
     })
     it('Should get Text', () => {
         browser.url('/')
-        expect(internetPage.getSpecificElementText(1)).equals('A/B Testing')
+        expect(internetPage.getSpecificElementText(1)).toHaveText('A/B Testing');
     })
     it('should click checkbox', () => {
         internetPage.clickLink(6)
