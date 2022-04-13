@@ -27,6 +27,85 @@ class Internet {
 
     get hereLink() { return $('.example a') }
 
+    get iframeBody() { return $('#tinymce') }
+    get iframe() { return $('mceu_27 #mce_0_ifr') }
+
+
+    get columnA() { return $('#column-a') }
+    get columnB() { return $('#column-b') }
+
+
+
+
+    get columnAHeader() { return $('#column-a header') }
+    get columnBHeader() { return $('#column-b header') }
+
+
+    get draggable() { return $('#draggable') }
+    get droppable() { return $('#drappable') }
+    get droppableParagraph() { return $('#droppable p') }
+
+
+    get dropdownMenu() { return $('#dropdown') }
+    get dropdownMenuOption1() { return $('#dropdown option:nth-child(2)') }
+    get dropdownMenuOption2() { return $('#dropdown option:nth-child(3)') }
+
+    javascriptAlertButton(index) {return $(`.example li:nth-child(${index}) button`)}
+
+
+    /**
+     * click the specified javascript alert button
+     * @param {String} index the index of the element
+     */
+    clickJavascriptAlertButton(index) {
+        this.javascriptAlertButton(index).waitForDisplayed()
+        this.javascriptAlertButton(index).click()
+    }
+
+
+    clickDropdownMenu() {
+        this.dropdownMenu.waitForDisplayed()
+        this.dropdownMenu.click()
+    }
+
+    clickDropdownMenuOption1() {
+        this.dropdownMenuOption1.waitForDisplayed()
+        this.dropdownMenuOption1.click()
+    }
+
+    clickDropdownMenuOption2() {
+        this.dropdownMenuOption2.waitForDisplayed()
+        this.dropdownMenuOption2.click()
+    }
+
+
+    dragDraggableToDroppable() {
+        this.draggable.waitForDisplayed()
+        this.draggable.dragAndDrop(this.droppable)
+    }
+
+    /**
+    * drag column A to column B
+    */
+
+    dragColumnAToColumnB() {
+        this.columnA.waitForDisplayed()
+        this.columnA.dragAndDrop(this.columnB)
+    }
+
+
+
+    /**
+    * @param {String} text the text to be entered
+    */
+    sendTextToBody(text) {
+        this.iframeBody.waitForDisplayed()
+        this.iframeBody.clearValue()
+        this.iframeBody.click()
+        this.iframeBody.keys(text)
+    }
+
+
 
     clickHereLink() {
         this.hereLink.waitForDisplayed()
