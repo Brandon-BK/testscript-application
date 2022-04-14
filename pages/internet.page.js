@@ -52,6 +52,38 @@ class Internet {
 
     javascriptAlertButton(index) {return $(`.example li:nth-child(${index}) button`)}
 
+    get enableButton() {return $('#input-example button')}
+    get inputEnabledField() {return $('#input-example input')}
+
+    get exampleButton() {return $('.example button')}
+    deleteButton(index) {return $(`#elements button:nth-child(${index})`)}
+
+    get pageButton() {return $('#checkbox-example button')}
+
+    clickPageButton() {
+        this.pageButton.waitForDisplayed()
+        this.pageButton.click()
+    }
+
+
+    clickExampleButton() {
+        this.exampleButton.waitForDisplayed()
+        this.exampleButton.click()
+    }
+
+    clickDeleteButton(index) {
+        this.deleteButton(index).waitForDisplayed()
+        this.deleteButton(index).click()
+    }
+
+    /**
+     * Click the Enable/Disable Button
+     */
+    clickEnableButton() {
+        this.enableButton.waitForDisplayed()
+        this.enableButton.click()
+    }
+
 
     /**
      * click the specified javascript alert button

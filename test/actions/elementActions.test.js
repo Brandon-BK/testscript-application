@@ -1,5 +1,7 @@
 const { assert } = require("chai");
-internetPage = require("../pages/internet.page");
+internetPage = require("../../pages/internet.page");
+loginData = require("../../data/logindata")
+
 
 describe(" Test element actions", function () {
   it("Should click element", () => {
@@ -22,15 +24,15 @@ describe(" Test element actions", function () {
   });
   it("should enter username", () => {
     browser.url(`${browser.options.baseUrl}/login`);
-    internetPage.enterUserName("Brandon");
-    assert("Brandon", internetPage.username.getValue());
+    internetPage.enterUserName(loginData.userName);
+    assert(loginData.userName, internetPage.username.getValue());
     // expect(browser).toHaveUrl('/login')
   });
   it("should enter password", () => {
     browser.url(`${browser.options.baseUrl}/login`);
     browser.url("http://the-internet.herokuapp.com/login");
-    internetPage.enterPassword("Password");
-    assert("Password", internetPage.password.getValue());
+    internetPage.enterPassword(loginData.password);
+    assert(loginData.password, internetPage.password.getValue());
   });
   it("Should clear value", () => {
     internetPage.username.click();
