@@ -247,6 +247,13 @@ class Internet {
         }
         this.h3Header.waitForDisplayed()
     }
+
+    clickOnDoeLink() {
+        if(this.firstLink.isDisplayed() === true) {
+            this.firstLink.click()
+        }
+        this.h3Header.waitForDisplayed()
+    }
 }
 
 module.exports = new Internet()
