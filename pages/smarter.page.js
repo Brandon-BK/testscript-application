@@ -8,7 +8,7 @@ class Smarter extends Page {
 
     // testing the navbar
     get homeLink() { return $('') }
-    get servicesLink() { return $('') }
+    get servicesLink() { return $('a.#services') }
     get aboutLink() { return $('') }
     get productsLink() { return $('') }
     get contactUsLink() { return $('') }
