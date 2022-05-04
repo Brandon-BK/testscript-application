@@ -12,5 +12,27 @@ describe("Login", () => {
        await brandonBishopUserPage.clickSubmitBtn()
     //    await browser.pause(60000)
     });
-    
+    it('Should wait for loading process to finish', async () => {
+      await brandonBishopUserPage.loadingProcess()
+      await brandonBishopUserPage.clickMyAdmin()
+      await browser.pause(50000)
+   });
+   // it('Should click Admin', async () => {
+   //    await brandonBishopUserPage.clickMyAdmin()
+   //    await browser.pause(2000)
+   // });
+   // it('Should click Users', async () => {
+   //    await brandonBishopUserPage.clickUsersCard()
+   //    await browser.pause(5000)
+   // });
+   // it('Should click dropdown', async () => {
+   //    await brandonBishopUserPage.clickDropdown()
+   //    await browser.pause(5000)
+   //    //clickDropdownOption()
+   // });
+   // it('Should click dropdown option1', async () => {
+   //    await brandonBishopUserPage.clickDropdownOption()
+   //    await browser.pause(5000)
+   //    //clickDropdownOption()
+   // });
 })

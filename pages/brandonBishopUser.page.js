@@ -6,11 +6,17 @@ class NewUser  {
 
     get password() { return $("#exampleInputPassword1") }
 
-    get submitBtn() {  return $('input[type="submit"]'); }
+    get submitBtn() {  return $('input[type="submit"]') }
 
-    get loading() {  return $(".loading") }
+    get loading() { return $('.loading') }
 
+    get admin() { return $('.fa-wrench') }
 
+    get users() { return $('span.fa-users') }
+
+    get dropdown() { return $('.dropdown-toggle') }
+
+    get dropdownOption() { return $('a[href="#/users/form/new"]')  }
 
 
 
@@ -37,7 +43,33 @@ class NewUser  {
   async clickSubmitBtn() {
     await this.submitBtn.waitForDisplayed()
     await this.submitBtn.click()
-}
+  }
+
+
+  async loadingProcess() {
+    await this.loading.waitForDisplayed()
+  }
+
+
+  async clickMyAdmin() {
+    await this.admin.waitForDisplayed()
+    await this.admin.click()
+  }
+
+  // async clickUsersCard() {
+  //   await this.users.waitForDisplayed()
+  //   await this.users.click()
+  // }
+
+  // async clickDropdown() {
+  //   await this.dropdown.waitForDisplayed()
+  //   await this.dropdown.click()
+  // }
+
+  // async clickDropdownOption() {
+  //   await this.dropdownOption.waitForDisplayed()
+  //   await this.dropdownOption.click()
+  // }
 
 
 }
