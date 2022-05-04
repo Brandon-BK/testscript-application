@@ -47,7 +47,8 @@ class NewUser  {
 
 
   async loadingProcess() {
-    await this.loading.waitForDisplayed()
+    await this.loading.waitForDisplayed(
+    )
   }
 
 

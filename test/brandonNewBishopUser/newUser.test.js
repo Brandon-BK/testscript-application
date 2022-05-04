@@ -14,8 +14,6 @@ describe("Login", () => {
     });
     it('Should wait for loading process to finish', async () => {
       await brandonBishopUserPage.loadingProcess()
-      await brandonBishopUserPage.clickMyAdmin()
-      await browser.pause(50000)
    });
    // it('Should click Admin', async () => {
    //    await brandonBishopUserPage.clickMyAdmin()
