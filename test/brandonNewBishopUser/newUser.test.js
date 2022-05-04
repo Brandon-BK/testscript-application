@@ -1,8 +1,16 @@
-brandonBishopUserPage = require("../../pages/brandonBishopUser.page");
+// ENV=bishop npm test -- --spec ./test/brandonNewBishopUser/newUser.test.js
+
+const brandonBishopUserPage = require("../../pages/brandonBishopUser.page");
+
+// You don't need these two
+// const { loadingProcess } = require("../../pages/brandonBishopUser.page");
+
+// brandonBishopUserPage = require("../../pages/brandonBishopUser.page");
 
 describe("Login", () => {
     it('Should set value for the email input', async () => {
        await browser.url(`${browser.options.baseUrl}/`);
+       await browser.refresh();
        await brandonBishopUserPage.enterEmail('TDD')
     });
     it('Should set value for the password input', async () => {
@@ -10,12 +18,12 @@ describe("Login", () => {
     });
     it('Should click submit button', async () => {
        await brandonBishopUserPage.clickSubmitBtn()
-    //    await browser.pause(60000)
+       //await browser.pause(60000)
     });
     it('Should wait for loading process to finish', async () => {
       await brandonBishopUserPage.loadingProcess()
-      await brandonBishopUserPage.clickMyAdmin()
-      await browser.pause(50000)
+      await expect(brandonBishopUserPage.profile).toHaveTextContaining('My Profile')
+      //await browser.pause(50000)
    });
    // it('Should click Admin', async () => {
    //    await brandonBishopUserPage.clickMyAdmin()

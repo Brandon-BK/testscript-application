@@ -2,23 +2,15 @@ class NewUser  {
 
     // getting the elements from the site
 
-    get email() { return $("#exampleInputEmail1") }
-
-    get password() { return $("#exampleInputPassword1") }
-
-    get submitBtn() {  return $('input[type="submit"]') }
-
-    get loading() { return $('.loading') }
-
-    get admin() { return $('.fa-wrench') }
-
-    get users() { return $('span.fa-users') }
-
-    get dropdown() { return $('.dropdown-toggle') }
-
-    get dropdownOption() { return $('a[href="#/users/form/new"]')  }
-
-
+    get profile()           { return $('=My Profile') }
+    get email()             { return $("#exampleInputEmail1") }
+    get password()          { return $("#exampleInputPassword1") }
+    get submitBtn()         { return $('input[type="submit"]') }
+    get loading()           { return $('.loading') }
+    get admin()             { return $('.fa-wrench') }
+    get users()             { return $('span.fa-users') }
+    get dropdown()          { return $('.dropdown-toggle') }
+    get dropdownOption()    { return $('a[href="#/users/form/new"]')  }
 
     
     /**
@@ -48,6 +40,7 @@ class NewUser  {
 
   async loadingProcess() {
     await this.loading.waitForDisplayed()
+    await this.loading.waitForDisplayed(3000000, true);
   }
 
 
