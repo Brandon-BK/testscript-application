@@ -278,10 +278,10 @@ class Internet {
    * Clicks on the links based on the index provided
    * @param {Number} index the index of the element
    */
-  clickLink(index) {
+  k(index) {
     this.link(index).waitForDisplayed();
     this.link(index).click();
-  }
+  }clickLin
 
   clickCheckbox(index) {
     this.checkboxes(index).waitForDisplayed();

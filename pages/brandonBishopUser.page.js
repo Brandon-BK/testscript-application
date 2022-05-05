@@ -2,25 +2,39 @@ class NewUser  {
 
     // getting the elements from the site
 
-    get email() { return $("#exampleInputEmail1") }
-
-    get password() { return $("#exampleInputPassword1") }
-
-    get submitBtn() {  return $('input[type="submit"]') }
-
-    get loading() { return $('.loading') }
-
-    get admin() { return $('.fa-wrench') }
-
-    get users() { return $('span.fa-users') }
-
-    get dropdown() { return $('.dropdown-toggle') }
-
-    get dropdownOption() { return $('a[href="#/users/form/new"]')  }
-
-
-
+    get email()                   { return $("#exampleInputEmail1") }
+    get password()                { return $("#exampleInputPassword1") }
+    get submitBtn()               { return $('input[type="submit"]') }
+    get loading()                 { return $('.loading') }
+    get profile()                 { return $('=My Profile') }
+    get admin()                   { return $('.fa-wrench') }
+    get users()                   { return $('span.fa-users') }
+    get dropdown()                { return $('.dropdown-toggle') }
+    get dropdownOption()          { return $('a[href="#/users/form/new"]')  }
+    get userID()                  { return $('#UserID') }
+    get userName()                { return $('#Name') }             
+    get userPassword()            { return $('#Password') }
+    get userNumber()              { return $('form div:nth-child(4) input') }
+    get userEmail()               { return $('#Email') }
+    get userRole()                { return $('#Role') }
+    get accountID()               { return $('#RepID') }
+    get adminCheckbox()           { return $('form div:nth-child(14) label input') }
+    get CustomersCheckbox()       { return $('form div:nth-child(17) label input') }
+    get saveBtn()                 { return $('.navbuttonright') }
+    get backBtn()                 { return $('.navbuttonleft') }
     
+
+   
+    
+    async clickSaveBtn() {
+      await this.saveBtn.waitForDisplayed()
+      await this.saveBtn.click()
+    }
+
+    async clickBackBtn() {
+      await this.saveBtn.waitForDisplayed()
+      await this.saveBtn.click()
+    }
     /**
    * Enter the username into the field
    * @param {String} text user name to be entered
@@ -47,8 +61,8 @@ class NewUser  {
 
 
   async loadingProcess() {
-    await this.loading.waitForDisplayed(
-    )
+    await this.loading.waitForDisplayed()
+    await this.loading.waitForDisplayed(3000000, true);
   }
 
 
@@ -57,21 +71,67 @@ class NewUser  {
     await this.admin.click()
   }
 
-  // async clickUsersCard() {
-  //   await this.users.waitForDisplayed()
-  //   await this.users.click()
-  // }
+  async clickUsersCard() {
+    await this.users.waitForDisplayed()
+    await this.users.click()
+  }
 
-  // async clickDropdown() {
-  //   await this.dropdown.waitForDisplayed()
-  //   await this.dropdown.click()
-  // }
+  async clickDropdown() {
+    await this.dropdown.waitForDisplayed()
+    await this.dropdown.click()
+  }
 
-  // async clickDropdownOption() {
-  //   await this.dropdownOption.waitForDisplayed()
-  //   await this.dropdownOption.click()
-  // }
+  async clickDropdownOption() {
+    await this.dropdownOption.waitForDisplayed()
+    await this.dropdownOption.click()
+  }
 
+  async enterUserID(text) {
+    await this.userID.waitForDisplayed();
+    await this.userID.setValue(text);
+  }
+
+  async enterUserName(text) {
+    await this.userName.waitForDisplayed();
+    await this.userName.setValue(text);
+  }
+
+  async enterUserPassword(text) {
+    await this.userPassword.waitForDisplayed();
+    await this.userPassword.setValue(text);
+  }
+
+  async enterUserNumber(text) {
+    await this.userNumber.waitForDisplayed();
+    await this.userNumber.setValue(text);
+  }
+
+  async enterUserEmail(text) {
+    await this.userEmail.waitForDisplayed();
+    await this.userEmail.setValue(text);
+  }
+
+  async enterUserRole(text) {
+    await this.userRole.waitForDisplayed();
+    await this.userRole.setValue(text);
+  }
+
+  async enterUserAccountID(text) {
+    await this.accountID.waitForDisplayed();
+    await this.accountID.setValue(text);
+  }
+
+
+  async clickAdminCheckbox() {
+    await this.adminCheckbox.waitForDisplayed()
+    await this.adminCheckbox.click()
+  }
+
+
+  async clickCustomersCheckbox() {
+    await this.CustomersCheckbox.waitForDisplayed()
+    await this.CustomersCheckbox.click()
+  }
 
 }
 
