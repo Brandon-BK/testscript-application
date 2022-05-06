@@ -27,19 +27,17 @@ class NewUser  {
     get clickUser()               { return $('a[href="#/users/form/TDDADMIN"]') }
     get delete()                  { return $('.glyphicon-floppy-remove') }
     get yes()                     { return $('.btn-success') }
+    get savedMessage()            { return $('span=User Saved Ok') }
+    get deletedMessage()          { return $('span=User Deleted Ok') }
+    get warning()                 { return $('#page-content-wrapper > div > div > div > div > div > div.alert.alert-warning.ng-binding.ng-scope') }
        
 
 
+  
 
-    async clickYes() {
-      await this.yes.waitForDisplayed();
-      await this.yes.click();
-    }
-
-    async clickDelete() {
-      await this.delete.waitForDisplayed();
-      await this.delete.click();
-    }
+  async waitForWarning() {
+    await this.warning.waitForDisplayed()
+  }
   
     /**
    * Enter the username into the field
@@ -127,18 +125,15 @@ class NewUser  {
     await this.accountID.setValue(text);
   }
 
-
   async clickAdminCheckbox() {
     await this.adminCheckbox.waitForDisplayed()
     await this.adminCheckbox.click()
   }
 
-
   async clickCustomersCheckbox() {
     await this.CustomersCheckbox.waitForDisplayed()
     await this.CustomersCheckbox.click()
   }
-
 
   async clickSaveBtn() {
     await this.saveBtn.waitForDisplayed()
@@ -150,20 +145,25 @@ class NewUser  {
     await this.backBtn.click()
   }
 
-
   async searchUser(text) {
     await this.search.waitForDisplayed();
     await this.search.setValue(text);
-   //  await this.search.waitForDisplayed(3000000, true);
   }
-
 
   async clickNewUser() {
     await this.clickUser.waitForDisplayed();
     await this.clickUser.click();
   }
    
+  async clickDelete() {
+    await this.delete.waitForDisplayed();
+    await this.delete.click();
+  }
   
+  async clickYes() {
+    await this.yes.waitForDisplayed();
+    await this.yes.click();
+  }
 
 }
 

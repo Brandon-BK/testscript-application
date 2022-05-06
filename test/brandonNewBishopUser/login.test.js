@@ -4,31 +4,31 @@ const brandonBishopUserPage = require("../../pages/brandonBishopUser.page");
 
 describe("Login", () => {
    it('Should set value for the email input', async () => {
-       await browser.url(`${browser.options.baseUrl}/`);
-       await browser.refresh();
-       await brandonBishopUserPage.enterEmail('TDD')
+      await browser.url(`${browser.options.baseUrl}/`);
+      await browser.refresh();
+      await brandonBishopUserPage.enterEmail('TDD')
    });
    it('Should set value for the password input', async () => {
-       await brandonBishopUserPage.enterPassword('PASSWORD')
+      await brandonBishopUserPage.enterPassword('PASSWORD')
    });
    it('Should click submit button', async () => {
-       await brandonBishopUserPage.clickSubmitBtn()
+      await brandonBishopUserPage.clickSubmitBtn()
    });
    it('Should wait for loading process to finish', async () => {
       await brandonBishopUserPage.loadingProcess()
-      // await expect(brandonBishopUserPage.profile).toHaveTextContaining('My Profile')
+      await expect(brandonBishopUserPage.profile).toHaveTextContaining('My Profile')
    });
    it('Should click Admin', async () => {
-        await brandonBishopUserPage.clickMyAdmin()
+      await brandonBishopUserPage.clickMyAdmin()
    });
    it('Should click Users', async () => {
-        await brandonBishopUserPage.clickUsersCard()
+      await brandonBishopUserPage.clickUsersCard()
    });
    it('Should click dropdown', async () => {
-        await brandonBishopUserPage.clickDropdown()
+      await brandonBishopUserPage.clickDropdown()
    });
    it('Should click dropdown option1', async () => {
-        await brandonBishopUserPage.clickDropdownOption()
+      await brandonBishopUserPage.clickDropdownOption()
    });
    it('Should set value for the userID input', async () => {
       await brandonBishopUserPage.enterUserID('TDDADMIN')
@@ -51,29 +51,33 @@ describe("Login", () => {
    it('Should set value for the accountID input', async () => {
       await brandonBishopUserPage.enterUserAccountID('01')
    });
-  it("Should click admin checkbox", async () => {
-     await brandonBishopUserPage.clickAdminCheckbox()
-  })
-  it("Should click all customers checkbox", async () => {
-     await brandonBishopUserPage.clickCustomersCheckbox()
-  })
-  it("Should click the save button", async () => {
-   await brandonBishopUserPage.clickSaveBtn()
+   it("Should click admin checkbox", async () => {
+      await brandonBishopUserPage.clickAdminCheckbox()
+   })
+   it("Should click all customers checkbox", async () => {
+      await brandonBishopUserPage.clickCustomersCheckbox()
+   })
+   it("Should click the save button and expect saved alert", async () => {
+      await brandonBishopUserPage.clickSaveBtn()
+      await expect(brandonBishopUserPage.savedMessage).toBeDisplayed()
    })
    it("Should click the back button", async () => {
       await brandonBishopUserPage.clickBackBtn()
    })
    it('Should find user', async () => {
       await brandonBishopUserPage.searchUser('TDDADMIN')
-  });
-  it("Should click user", async () => {
-   await brandonBishopUserPage.clickNewUser()
-  })
-  it("Should click delete", async () => {
-   await brandonBishopUserPage.clickDelete()
-  })
-  it("Should click yes on pop up", async () => {
-   await brandonBishopUserPage.clickYes()
-  })
+   });
+   it("Should click user", async () => {
+      await brandonBishopUserPage.clickNewUser()
+   })
+   it("Should click delete", async () => {
+      await brandonBishopUserPage.clickDelete()
+   })
+   it("Should click yes on pop up and expect the deleted alert and warning", async () => {
+      await brandonBishopUserPage.clickYes()
+      await brandonBishopUserPage.waitForWarning()
+      await expect(brandonBishopUserPage.deletedMessage).toBeDisplayed()
+      await expect(brandonBishopUserPage.warning).toHaveTextContaining('There are no users that matching your search term.')
+   })
    
 })
