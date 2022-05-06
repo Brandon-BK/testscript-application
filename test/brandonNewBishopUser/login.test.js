@@ -16,7 +16,7 @@ describe("Login", () => {
    });
    it('Should wait for loading process to finish', async () => {
       await brandonBishopUserPage.loadingProcess()
-      await expect(brandonBishopUserPage.profile).toHaveTextContaining('My Profile')
+      // await expect(brandonBishopUserPage.profile).toHaveTextContaining('My Profile')
    });
    it('Should click Admin', async () => {
         await brandonBishopUserPage.clickMyAdmin()
@@ -59,10 +59,17 @@ describe("Login", () => {
   })
   it("Should click all save button", async () => {
    await brandonBishopUserPage.clickSaveBtn()
+   // await expect(brandonBishopUserPage.successMsg).toHaveTextContaining('User Saved Ok')
    })
    it("Should click all back button", async () => {
       await brandonBishopUserPage.clickBackBtn()
-      await browser.pause(5000)
    })
+   it('Should find user', async () => {
+      await brandonBishopUserPage.searchUser('TDDADMIN')
+      await expect(brandonBishopUserPage.expectUser).toHaveTextContaining('TDDAMIN')
+  });
+  it("Should click user", async () => {
+   await brandonBishopUserPage.clickNewUser()
+})
    
 })

@@ -21,20 +21,31 @@ class NewUser  {
     get adminCheckbox()           { return $('form div:nth-child(14) label input') }
     get CustomersCheckbox()       { return $('form div:nth-child(17) label input') }
     get saveBtn()                 { return $('.navbuttonright') }
+    // get successMsg()                 { return $('=User Saved Ok') }
     get backBtn()                 { return $('.navbuttonleft') }
-    
-
+    get search()                  { return $('div:nth-child(6) input') }
+    get expectUser()              { return $('=TDDADMIN') }
+    get clickUser()               { return $('a[href="#/users/form/TDDADMIN"]') }
    
     
-    async clickSaveBtn() {
-      await this.saveBtn.waitForDisplayed()
-      await this.saveBtn.click()
-    }
 
-    async clickBackBtn() {
-      await this.saveBtn.waitForDisplayed()
-      await this.saveBtn.click()
-    }
+
+
+
+  async clickNewUser() {
+    await this.clickUser.waitForDisplayed();
+    await this.clickUser.click();
+  }
+       
+
+
+
+  async searchUser(text) {
+   await this.search.waitForDisplayed();
+   await this.search.setValue(text);
+  //  await this.search.waitForDisplayed(3000000, true);
+  }
+  
     /**
    * Enter the username into the field
    * @param {String} text user name to be entered
@@ -132,6 +143,19 @@ class NewUser  {
     await this.CustomersCheckbox.waitForDisplayed()
     await this.CustomersCheckbox.click()
   }
+
+
+  async clickSaveBtn() {
+    await this.saveBtn.waitForDisplayed()
+    await this.saveBtn.click()
+  }
+
+  async clickBackBtn() {
+    await this.backBtn.waitForDisplayed()
+    await this.backBtn.click()
+  }
+
+  
 
 }
 
