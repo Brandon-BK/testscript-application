@@ -21,30 +21,25 @@ class NewUser  {
     get adminCheckbox()           { return $('form div:nth-child(14) label input') }
     get CustomersCheckbox()       { return $('form div:nth-child(17) label input') }
     get saveBtn()                 { return $('.navbuttonright') }
-    // get successMsg()                 { return $('=User Saved Ok') }
     get backBtn()                 { return $('.navbuttonleft') }
     get search()                  { return $('div:nth-child(6) input') }
     get expectUser()              { return $('=TDDADMIN') }
     get clickUser()               { return $('a[href="#/users/form/TDDADMIN"]') }
-   
-    
-
-
-
-
-  async clickNewUser() {
-    await this.clickUser.waitForDisplayed();
-    await this.clickUser.click();
-  }
+    get delete()                  { return $('.glyphicon-floppy-remove') }
+    get yes()                     { return $('.btn-success') }
        
 
 
 
-  async searchUser(text) {
-   await this.search.waitForDisplayed();
-   await this.search.setValue(text);
-  //  await this.search.waitForDisplayed(3000000, true);
-  }
+    async clickYes() {
+      await this.yes.waitForDisplayed();
+      await this.yes.click();
+    }
+
+    async clickDelete() {
+      await this.delete.waitForDisplayed();
+      await this.delete.click();
+    }
   
     /**
    * Enter the username into the field
@@ -155,6 +150,19 @@ class NewUser  {
     await this.backBtn.click()
   }
 
+
+  async searchUser(text) {
+    await this.search.waitForDisplayed();
+    await this.search.setValue(text);
+   //  await this.search.waitForDisplayed(3000000, true);
+  }
+
+
+  async clickNewUser() {
+    await this.clickUser.waitForDisplayed();
+    await this.clickUser.click();
+  }
+   
   
 
 }

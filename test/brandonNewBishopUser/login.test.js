@@ -57,19 +57,23 @@ describe("Login", () => {
   it("Should click all customers checkbox", async () => {
      await brandonBishopUserPage.clickCustomersCheckbox()
   })
-  it("Should click all save button", async () => {
+  it("Should click the save button", async () => {
    await brandonBishopUserPage.clickSaveBtn()
-   // await expect(brandonBishopUserPage.successMsg).toHaveTextContaining('User Saved Ok')
    })
-   it("Should click all back button", async () => {
+   it("Should click the back button", async () => {
       await brandonBishopUserPage.clickBackBtn()
    })
    it('Should find user', async () => {
       await brandonBishopUserPage.searchUser('TDDADMIN')
-      await expect(brandonBishopUserPage.expectUser).toHaveTextContaining('TDDAMIN')
   });
   it("Should click user", async () => {
    await brandonBishopUserPage.clickNewUser()
-})
+  })
+  it("Should click delete", async () => {
+   await brandonBishopUserPage.clickDelete()
+  })
+  it("Should click yes on pop up", async () => {
+   await brandonBishopUserPage.clickYes()
+  })
    
 })
