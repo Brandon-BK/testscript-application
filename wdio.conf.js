@@ -1,7 +1,7 @@
 const url = require('./urls')
 const ENV = process.env.ENV
 
-if(!ENV || !['qa','dev','staging','activeChurch','smarter'].includes(ENV)){
+if(!ENV || !['qa','dev','staging','activeChurch','smarter', 'bishop'].includes(ENV)){
   console.log('Please use the following format when running the test script: ENV=qa|dev|staging|activeChurch')
   process.exit()
 }
