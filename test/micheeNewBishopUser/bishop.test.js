@@ -7,4 +7,9 @@ describe('My Login application', () => {
        await micheeNewBishopUserPage.login('TDD', 'PASSWORD');
         
     });
+
+    it('should wait for the page to load', async () => {
+       await micheeNewBishopUserPage.loading;
+        
+    });
 });

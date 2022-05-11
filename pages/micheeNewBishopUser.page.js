@@ -12,6 +12,8 @@ class NewUser  {
         await this.submitBtn.click();
     }
 
+    get loading(){ return $('.loading') }
+
 }
 
 module.exports = new NewUser()
