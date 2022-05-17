@@ -1,3 +1,5 @@
+// ENV=bishop npm test -- --spec ./test/micheeNewBishopUser/bishop.test.js
+
 const micheeNewBishopUserPage = require("../../pages/micheeNewBishopUser.page");
 
 
