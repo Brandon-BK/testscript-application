@@ -23,9 +23,13 @@ describe('should enter the email', () => {
 
      it('Filling in the New User form', async ()=>{
         await micheeNewBishopUserPage.fillNewUserForm("TDDADMIN","TTDD USER","PASSWORD","0821234567","tdd1@rapidtrade.biz","CC,REPORTS,settings","01")
+        await micheeNewBishopUserPage.sucessAlert.waitForDisplayed()
+        await expect(micheeNewBishopUserPage.sucessAlert).toBeDisplayed();
      });
 
      it('search for the New User ', async ()=>{
       await micheeNewBishopUserPage.searchForTheNewUser("TDDADMIN")
+      await expect(micheeNewBishopUserPage.deletedMessage).toBeDisplayed()
+      await expect(micheeNewBishopUserPage.warning).toHaveTextContaining('There are no users that matching your search term.')
      })
 });

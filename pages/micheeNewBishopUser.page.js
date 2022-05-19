@@ -28,7 +28,7 @@ class NewUser {
     get clickUser()     { return $('a[href="#/users/form/TDDADMIN"]') }
     get delete()        { return $('.glyphicon-floppy-remove') }
     get yes()           { return $('.btn-success') }
-    get savedMessage()  { return $('span=User Saved Ok') }
+    get sucessAlert()  { return $('span=User Saved Ok') }
     get deletedMessage() { return $('span=User Deleted Ok') }
     get warning()       { return $('#page-content-wrapper > div > div > div > div > div > div.alert.alert-warning.ng-binding.ng-scope') }
 
@@ -98,11 +98,12 @@ class NewUser {
          await this.CustomersCheckbox.click()
          await this.saveBtn.waitForDisplayed()
          await this.saveBtn.click()
-         await this.backBtn.waitForDisplayed()
-         await this.backBtn.click()
+        
       }
 
       async searchForTheNewUser(value){
+        await this.backBtn.waitForDisplayed()
+        await this.backBtn.click()
         await this.search.waitForDisplayed()
         await this.search.setValue(value)
         await this.clickUser.waitForDisplayed();
