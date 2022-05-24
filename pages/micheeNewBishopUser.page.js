@@ -1,40 +1,35 @@
 class NewUser {
 
-    // getting the elements from the site
+    // selecting the elements from the site
 
-    get email() { return $("#exampleInputEmail1") }
-    get password() { return $("#exampleInputPassword1") }
-    get submitBtn() { return $('input[type="submit"]') }
-    get loading() { return $('.loading') }
-    get myProfile() { return $('a=My Profile') }
-    get myAdmin() { return $('.fa-wrench') }
-    get userTab() { return $('span.fa-users') }
-    get dropdown(){return $('.dropdown-toggle')}
-    // get dropdownMenu(){return $('a=dropdown-menu')}
-    get dropdownUser(){return $('a[href="#/users/form/new')}
-    get userID(){ return $('#UserID') }
-    get userName(){ return $('#Name') }             
-    get userPassword(){ return $('#Password') }
-    get userNumber(){ return $('form div:nth-child(4) input') }
-    get userEmail(){ return $('#Email') }
-    get userRole(){ return $('#Role') }
-    get accountID(){ return $('#RepID') }
-    get adminCheckbox(){ return $('form div:nth-child(14) label input') }
+    get email()             { return $("#exampleInputEmail1") }
+    get password()          { return $("#exampleInputPassword1") }
+    get submitBtn()         { return $('input[type="submit"]') }
+    get loading()           { return $('.loading') }
+    get myProfile()         { return $('a=My Profile') }
+    get myAdmin()           { return $('.fa-wrench') }
+    get userTab()           { return $('span.fa-users') }
+    get dropdown()          {return $('.dropdown-toggle')}
+    get dropdownUser()      {return $('a[href="#/users/form/new')}
+    get userID()            { return $('#UserID') }
+    get userName()          { return $('#Name') }             
+    get userPassword()      { return $('#Password') }
+    get userNumber()        { return $('form div:nth-child(4) input') }
+    get userEmail()         { return $('#Email') }
+    get userRole()          { return $('#Role') }
+    get accountID()         { return $('#RepID') }
+    get adminCheckbox()     { return $('form div:nth-child(14) label input') }
     get CustomersCheckbox() { return $('form div:nth-child(17) label input') }
-    get saveBtn(){ return $('.navbuttonright') }
-    get backBtn(){ return $('.navbuttonleft') }
-    get search()        { return $('div:nth-child(6) input') }
-    get expectUser()    { return $('=TDDADMIN') }
-    get clickUser()     { return $('a[href="#/users/form/TDDADMIN"]') }
-    get delete()        { return $('.glyphicon-floppy-remove') }
-    get yes()           { return $('.btn-success') }
-    get sucessAlert()  { return $('span=User Saved Ok') }
-    get deletedMessage() { return $('span=User Deleted Ok') }
-    get warning()       { return $('#page-content-wrapper > div > div > div > div > div > div.alert.alert-warning.ng-binding.ng-scope') }
-
-
-
-
+    get saveBtn()           { return $('.navbuttonright') }
+    get backBtn()           { return $('.navbuttonleft') }
+    get search()            { return $('div:nth-child(6) input') }
+    get expectUser()        { return $('=TDDADMIN') }
+    get clickUser()         { return $('a[href="#/users/form/TDDADMIN"]') }
+    get delete()            { return $('.glyphicon-floppy-remove') }
+    get yes()               { return $('.btn-success') }
+    get sucessAlert()       { return $("//span[contains(text(), 'User Saved Ok')]") }
+    get deleteAlert()       { return $("//span[contains(text(), 'User Deleted Ok')]") }
+    get warning()           { return $('#page-content-wrapper > div > div > div > div > div > div.alert.alert-warning.ng-binding.ng-scope') }
 
 
 
@@ -73,7 +68,6 @@ class NewUser {
       async dropdownClick() {
         await this.dropdown.waitForDisplayed()
         await this.dropdown.click()
-        // await this.dropdownMenu.waitForDisplayed()
         await this.dropdownUser.click()
       }
 
@@ -98,7 +92,7 @@ class NewUser {
          await this.CustomersCheckbox.click()
          await this.saveBtn.waitForDisplayed()
          await this.saveBtn.click()
-        
+         
       }
 
       async searchForTheNewUser(value){
@@ -113,11 +107,6 @@ class NewUser {
         await this.yes.waitForDisplayed();
         await this.yes.click();
       }
-
-
-
-
-
 }
 
 module.exports = new NewUser()
