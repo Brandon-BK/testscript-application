@@ -1,16 +1,16 @@
 // ENV=bishop npm test -- --spec ./test/micheeNewBishopUser/bishop.test.js
 const { assert } = require("chai");
-const newlogindata = require("../../data/newlogindata");
+const logindata = require("../../data/logindata");
 const micheeNewBishopUserPage = require("../../pages/micheeNewBishopUser.page");
 const formData = require("../../data/formData");
 
 describe('should enter the email', () => {
     it('should login with valid bishop credentials', async () => {
         browser.url(`${browser.options.baseUrl}`)
-       await micheeNewBishopUserPage.enterEmail(newlogindata.email);
-       await micheeNewBishopUserPage.enterPassword(newlogindata.password);
-       assert(newlogindata.email, micheeNewBishopUserPage.email.getValue());
-       assert(newlogindata.password, micheeNewBishopUserPage.password.getValue());
+       await micheeNewBishopUserPage.enterEmail(logindata.email);
+       await micheeNewBishopUserPage.enterPassword(logindata.password);
+       assert(logindata.email, micheeNewBishopUserPage.email.getValue());
+       assert(logindata.password, micheeNewBishopUserPage.password.getValue());
        await micheeNewBishopUserPage.clickSubmitBtn();
     });
 

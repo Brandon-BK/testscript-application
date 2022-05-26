@@ -9,8 +9,8 @@ class NewUser {
     get myProfile()         { return $('a=My Profile') }
     get myAdmin()           { return $('.fa-wrench') }
     get userTab()           { return $('span.fa-users') }
-    get dropdown()          {return $('.dropdown-toggle')}
-    get dropdownUser()      {return $('a[href="#/users/form/new')}
+    get dropdown()          {return  $('.dropdown-toggle')}
+    get dropdownUser()      {return  $('a[href="#/users/form/new')}
     get userID()            { return $('#UserID') }
     get userName()          { return $('#Name') }             
     get userPassword()      { return $('#Password') }
