@@ -1,8 +1,8 @@
 const url = require('./urls')
 const ENV = process.env.ENV
 
-if(!ENV || !['qa','dev','staging','activeChurch','smarter'].includes(ENV)){
-  console.log('Please use the following format when running the test script: ENV=qa|dev|staging|activeChurch')
+if(!ENV || !['qa','dev','staging','activeChurch','smarter','bishop'].includes(ENV)){
+  console.log('Please use the following format when running the test script: ENV=qa|dev|staging|activeChurch|bishop')
   process.exit()
 }
 
@@ -110,7 +110,7 @@ exports.config = {
   baseUrl: url[process.env.ENV],
   //
   // Default timeout for all waitFor* commands.
-  waitforTimeout: 10000,
+  waitforTimeout: 900000,
   //
   // Default timeout in milliseconds for request
   // if browser driver or grid doesn't send response
