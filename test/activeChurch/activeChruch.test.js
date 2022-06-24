@@ -8,7 +8,7 @@ describe('OPen up give my life form', async () => {
        await browser.url(`${browser.options.baseUrl}`)
        await browser.refresh();
        await activeChurchPage.clickGiveYourLifeButton()
-       await activeChurchPage.setNameValue()
-       await activeChurchPage.setEmailValue()
+       await activeChurchPage.setNameValue('Jadon')
+       await activeChurchPage.setEmailValue("sancho@gmail.com")
     })
 })
