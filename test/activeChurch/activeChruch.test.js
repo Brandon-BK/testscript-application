@@ -1,4 +1,4 @@
-//ENV=bishop npm test -- --spec ./test/activeChurch/activeChurch.test.js
+//ENV=activeChurch npm test -- --spec ./test/activeChurch/activeChurch.test.js
 
 const activeChurchPage = require("../../pages/activeChurch.page")
 
