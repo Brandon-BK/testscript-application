@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="hidden-xs hidden-sm pull-right ng-scope" ng-if="!ctrl.$scope.hidePrice" ng-show="!ctrl.Settings.AnonymousUser.hidePrice" aria-hidden="false">
+        <table class="total-panel">
+          <tbody>
+            <tr>
+            <td class="left">Total Excl</td><td class="left">GST</td><!-- ngIf: !ctrl.$scope.hideTotalIncl --><td ng-if="!ctrl.$scope.hideTotalIncl" class="ng-scope">Total Incl</td><!-- end ngIf: !ctrl.$scope.hideTotalIncl -->
+          </tr>
+          <tr>
+            <td id="totalexc" class="total left ng-binding">$37.63</td>
+            <td id="totalvat" class="total left ng-binding">$3.76</td>
+            <!-- ngIf: !ctrl.$scope.hideTotalIncl --><td class="total ng-binding ng-scope" ng-if="!ctrl.$scope.hideTotalIncl">$41.39</td><!-- end ngIf: !ctrl.$scope.hideTotalIncl -->
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      
+</body>
+</html>
